@@ -1,0 +1,13 @@
+def write_text_to_file():
+    """Writes input text to file."""
+    text = input("Enter some text: ")  # Ask for text input
+    file_name = input("Enter the file name (without extension): ")  # Ask for file name
+    file_name += ".txt"  # Add .txt extension
+    file_location = os.path.dirname(os.path.realpath(__file__))
+    file_path = os.path.join(file_location, file_name)
+    
+
+    with open(file_path, "w") as file:
+        file.write(text)
+
+    print(f"Text has been written to {file_name}")
