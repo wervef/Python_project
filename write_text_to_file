@@ -7,7 +7,7 @@ def write_text_to_file():
     text = input("Enter some text: ")  # Ask for text input
     file_name = input("Enter the file name (without extension): ")  # Ask for file name
     file_name += ".txt"  # Add .txt extension
-    file_location = os.path.dirname(os.path.realpath(__file__))
+    file_location = "Desktop"
     file_path = os.path.join(file_location, file_name)
     
 
