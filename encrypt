@@ -1,8 +1,6 @@
 from cryptography.fernet import Fernet
 import os
-import base64
 
-from cryptography.fernet import Fernet
 
 def generate_key(password):
     key = Fernet.generate_key()
