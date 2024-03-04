@@ -1,0 +1,31 @@
+from cryptography.fernet import Fernet
+import os
+import base64
+
+from cryptography.fernet import Fernet
+
+def generate_key(password):
+    key = Fernet.generate_key()
+    cipher_suite = Fernet(key)
+    encrypted_password = cipher_suite.encrypt(password)
+    return key, encrypted_password
+
+def encrypt_file(file_path, key):
+    with open(file_path, 'rb') as file:
+        plaintext = file.read()
+
+    cipher_suite = Fernet(key)
+    encrypted_text = cipher_suite.encrypt(plaintext)
+
+    with open(file_path + '.encrypted', 'wb') as file:
+        file.write(encrypted_text)
+
+    print("File has been encrypted.")    
+
+with open('C:/Users/werfe/Desktop/random_password.txt', 'r') as file:
+        password_list = (file.readlines())
+chosen_password = password_list[int(input("Pick a password by pressing 0 or 1 or 2 "))]                
+password = bytes(chosen_password, encoding='utf-8')
+
+key, encrypted_password = generate_key(password)
+encrypt_file(input("Choose a file. (inlude path) "), key)
