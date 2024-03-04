@@ -26,4 +26,4 @@ chosen_password = password_list[int(input("Pick a password by pressing 0 or 1 or
 password = bytes(chosen_password, encoding='utf-8')
 
 key, encrypted_password = generate_key(password)
-encrypt_file(input("Choose a file. (inlude path) "), key)
+encrypt(input("Choose a file. (inlude path) "), key)
