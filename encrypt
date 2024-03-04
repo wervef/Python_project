@@ -8,7 +8,7 @@ def generate_key(password):
     encrypted_password = cipher_suite.encrypt(password)
     return key, encrypted_password
 
-def encrypt_file(file_path, key):
+def encrypt(file_path, key):
     with open(file_path, 'rb') as file:
         plaintext = file.read()
 
