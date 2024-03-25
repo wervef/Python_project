@@ -3,12 +3,14 @@ import os
 
 
 def generate_key(password):
+    """Generates key using fernet."""
     key = Fernet.generate_key()
     cipher_suite = Fernet(key)
     encrypted_password = cipher_suite.encrypt(password)
     return key, encrypted_password
 
 def encrypt(file_path, key):
+    """Encrypts a .txt file."""
     with open(file_path, 'rb') as file:
         plaintext = file.read()
 
