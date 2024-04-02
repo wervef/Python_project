@@ -25,6 +25,6 @@ def network_sender(file_path, target_ip, target_port):
 
 file_path = input("Type file path. ")
 target_ip = input("Type target's IP address ")
-target_port = input("Typer port. ")
+target_port = int(input("Typer port. "))
 
 network_sender(file_path, target_ip, target_port)
