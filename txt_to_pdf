@@ -21,7 +21,7 @@ def txt_to_pdf(input_file, output_directory):
 
     print(f"PDF file saved at: {pdf_file}")
 
-# Example usage:
-input_file = r"C:/Users/user\Desktop/file.txt"  # Replace with your .txt file path
-output_directory = r"C:/Users/user\Desktop"  # Replace with your desired output directory
+
+input_file = r"C:/Users/user\Desktop/file.txt" 
+output_directory = r"C:/Users/user\Desktop" 
 txt_to_pdf(input_file, output_directory)
