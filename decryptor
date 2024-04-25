@@ -1,0 +1,19 @@
+from cryptography.fernet import Fernet
+
+def decrypt_file(file_path, key):
+    with open(file_path, 'rb') as file:
+        encrypted_text = file.read()
+
+    cipher_suite = Fernet(key)
+    decrypted_text = cipher_suite.decrypt(encrypted_text)
+
+    return decrypted_text.decode()
+
+
+password = input("Type password. ")
+
+key = input("Type key. ")
+
+decrypted_content = decrypt_file(input("Type file to path. "), key)
+
+print(decrypted_content)
