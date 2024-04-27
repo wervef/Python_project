@@ -10,9 +10,9 @@ def decrypt_file(file_path, key):
     return decrypted_text.decode()
 
 
-password = input("Type password. ")
+password = b'replace_with_password'
 
-key = input("Type key. ")
+key = b'replace_with_key'
 
 decrypted_content = decrypt_file(input("Type file to path. "), key)
 
